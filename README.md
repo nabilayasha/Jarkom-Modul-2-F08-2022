@@ -54,6 +54,9 @@ CONFIG Eden :
       netmask 255.255.255.0
       gateway 192.203.3.1
 
+![](images/ss_node_pinggoogle.png)
+semua node bisa melakukan ping ke google yang artinya semua node sudah tersambung ke internet.
+
 ### **Soal 2**
 Untuk mempermudah mendapatkan informasi mengenai misi dari Handler, bantulah Loid membuat website utama dengan akses wise.yyy.com dengan alias www.wise.yyy.com pada folder wise
 
