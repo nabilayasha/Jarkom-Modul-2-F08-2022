@@ -7,6 +7,51 @@ Muhammad Rolanov Wowor - 5025201017 <br/>
 ![](images/ss.png)
 ### **Soal 1**
 WISE akan dijadikan sebagai DNS Master, Berlint akan dijadikan DNS Slave, dan Eden akan digunakan sebagai Web Server. Terdapat 2 Client yaitu SSS, dan Garden. Semua node terhubung pada router Ostania, sehingga dapat mengakses internet 
+###Jawaban
+
+IP :
+
+    IP DNS: 192.168.122.1
+    
+CONFIG SSS :
+
+      uto eth0
+      iface eth0 inet static
+      address 192.203.1.2
+      netmask 255.255.255.0
+      gateway 192.203.1.1
+      
+ CONFIG Garden :
+ 
+      auto eth0
+      iface eth0 inet static
+      address 192.203.1.3
+      netmask 255.255.255.0
+      gateway 192.203.1.1
+      
+ CONFIG WISE :
+ 
+      auto eth0
+      iface eth0 inet static
+      address 192.203.2.2
+      netmask 255.255.255.0
+      gateway 192.203.2.1
+      
+CONFIG Berlint: 
+
+      auto eth0
+      iface eth0 inet static
+      address 192.203.3.2
+      netmask 255.255.255.0
+      gateway 192.203.3.1
+      
+CONFIG Eden :
+
+      auto eth0
+      iface eth0 inet static
+      address 192.203.3.3
+      netmask 255.255.255.0
+      gateway 192.203.3.1
 
 ### **Soal 2**
 Untuk mempermudah mendapatkan informasi mengenai misi dari Handler, bantulah Loid membuat website utama dengan akses wise.yyy.com dengan alias www.wise.yyy.com pada folder wise
