@@ -7,7 +7,8 @@ Muhammad Rolanov Wowor - 5025201017 <br/>
 ![](images/ss.png)
 ### **Soal 1**
 WISE akan dijadikan sebagai DNS Master, Berlint akan dijadikan DNS Slave, dan Eden akan digunakan sebagai Web Server. Terdapat 2 Client yaitu SSS, dan Garden. Semua node terhubung pada router Ostania, sehingga dapat mengakses internet 
-###Jawaban
+
+### **Jawaban**
 
 IP :
 
