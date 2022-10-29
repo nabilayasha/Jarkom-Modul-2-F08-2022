@@ -60,6 +60,16 @@ semua node bisa melakukan ping ke google yang artinya semua node sudah tersambun
 ### **Soal 2**
 Untuk mempermudah mendapatkan informasi mengenai misi dari Handler, bantulah Loid membuat website utama dengan akses wise.yyy.com dengan alias www.wise.yyy.com pada folder wise
 
+### **Jawaban**
+
+Langkah pertama ialah melakukan instalasi bind 9 terlebih dahulu
+
+        apt-get update
+        apt-get install bind9 -y
+        
+Kemudian membuat domain dengan command <code> nano /etc/bind/named.conf.local </code>   dan melakukan konfigurasi sebagai berikut
+         
+
 ### **Soal 3**
 Setelah itu ia juga ingin membuat subdomain eden.wise.yyy.com dengan alias www.eden.wise.yyy.com yang diatur DNS-nya di WISE dan mengarah ke Eden
 
