@@ -67,11 +67,31 @@ Langkah pertama ialah melakukan instalasi bind 9 terlebih dahulu
         apt-get update
         apt-get install bind9 -y
         
-Kemudian membuat domain dengan command <code> nano /etc/bind/named.conf.local </code>   dan melakukan konfigurasi sebagai berikut
+Kemudian membuat domain dengan command <code> nano /etc/bind/named.conf.local </code>   dan melakukan konfigurasi sebagai berikut <br>
+         ![](images/wise_namedconf.png)
          
+Setelah itu buat folder baru bernama wise: <code> mkdir /etc/bind/wise </code>, selanjutnya membuat konfigurasi dari wise.f08.com. Pertama-tama adalah menyalin konfigurasi dari db.local : <code> cp /etc/bind/db.local /etc/bind/wise/wise.f08.com </code>. Saat dibuka, konfigurasi yang perlu diubah adalah localhost menjadi wise.f08.com, kemudian mengarahkan ke IP wise yaitu <code> 192.203.2.2 </code>, selanjutnya melakukan restart bind dengan command <code> service bind9 restart </code> lalu menambah konfigurasi CNAME untuk alias www.wise.f08.com, sehingga hasil akhir konfigurasi dari file wise.f08.com menjadi sebagai berikut:<br>
+![](images/wise_db.png) </br>
+
+Lalu untuk hasil pengetesannya kami mencoba client SSS untuk mengakses wise.f08.com dengan <code> ping wise.f08.com </code> dan hasilnya sebagai berikut:<br>
+![](images/sss_pingwise.png)
 
 ### **Soal 3**
 Setelah itu ia juga ingin membuat subdomain eden.wise.yyy.com dengan alias www.eden.wise.yyy.com yang diatur DNS-nya di WISE dan mengarah ke Eden
+
+Pembuatan subdomain hanya perlu menambahkan konfigurasi pada file <code> /etc/bind/wise/wise.f08.com </code> yaitu <br>
+```
+    eden    IN      A       192.203.2.2 // IP Wise
+    www.eden        IN      CNAME   eden.wise.f08.com // Subdomain eden
+```
+</br>
+
+sehingga hasil konfigurasi file <code> /etc/bind/wise/wise.f08.com </code> sebagai berikut: <br>
+![](images/wise_addeden.png)</br>
+
+Kemudian kami mencoba pengetesan dengan Eden mengakses subdomain dengan <code> ping eden.wise.f08.com </code>:<br>
+![](images/eden_pingedenwise.png)
+
 
 ### **Soal 4**
 Buat juga reverse domain untuk domain utama
